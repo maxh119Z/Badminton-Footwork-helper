@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  border:none;
+  background-color:white;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+ 
+}
+/* Style container */
+#sqcont {
+  padding:5px;
+  background-color:white;
+  border-radius:2px;
+  border:2px solid black;
+  display: flex;
+  gap: 20px;
+  width:100vw;
+  height:100vh;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  position:relative;
+  width: 32vw;
+  height: 32vw;
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* Nice gradient */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add a hover effect for fun */
+.square:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Video styling */
+#replay {
+  background-color:black;
+  width: 640px;
+  height: 480px;
+  border: 2px solid black;
+  opacity:0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.full {
+  animation-name: full;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+#countdownOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top */
+    font-size: 5rem;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+@keyframes full {
+  0% {
+    opacity: 0;
+    width: 640px;
+    height: 480px;
+  }
+  96.5% {
+    opacity:1;
+    width: 100vw;
+    height: 100vh;
+  }
+  100%{
+    opacity:1;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+#title{
+  padding-left:20px;
+}
+#preview{
+  
+  display:block;
+}
+#preview.recording {
+  display:block;
+  position: fixed;
+  width: 300px;
+  
+  height: 225px;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9939; /* Make sure it's on top of other elements */
+}
+
+#startRecording{
+  position:absolute;
+  left: 9px;
+  top: 8px;
+}
+/* Button styling */
+button {
+  padding: 10px 20px;
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+/* Download link styling */
+#downloadLink {
+  text-decoration: none;
+  font-size: 16px;
+  color: #0072ff;
+  margin-top: 10px;
+}
+
+#downloadLink:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #preview.recording {
+      width: 150px; /* Make the floating video smaller on mobile */
+      height: 112px;
+      bottom: 10px;
+      left: 10px;
+  }
+
+  video {
+      width: 100%; /* Make the videos take full width on smaller screens */
+      height: auto;
+  }
+
+
+  button {
+      width: 100%; /* Make buttons more tappable on mobile */
+      max-width: 300px;
+  }
+}

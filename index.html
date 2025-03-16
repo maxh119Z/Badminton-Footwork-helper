@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  
+  <div class="container" id = "sqcont">
+      <div class="square" id="square1"></div>
+      <div class="square" id="square2"></div>
+  </div>
+  <div id = "title"><h1>Record and Replay Video</h1></div>
+  <video id="preview" playsinline></video>
+
+  <video id="replay" playsinline controls muted controls></video>
+  <br>
+  <button id="startRecording">Start Recording for 20 seconds</button>
+  <a id="downloadLink" href="#" download="recording.webm" style="display: none;">Download Video</a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
